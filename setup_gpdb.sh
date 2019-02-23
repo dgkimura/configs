@@ -15,3 +15,14 @@ pip install lockfile
 
 # developer settings
 echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
+# vim 8.1 for termdebug
+wget https://ftp.nluug.nl/pub/vim/unix/vim-8.1.tar.bz2
+tar xvjf vim-8.1.tar.bz2
+pushd vim81
+sudo apt-get install -y libncurses5-dev libncursesw5-dev
+./configure --with-features=huge
+sudo make install
+sudo ln -s /usr/local/bin/vim /usr/bin/vim
+popd
+rm -rf vim81
