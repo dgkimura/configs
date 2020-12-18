@@ -38,5 +38,7 @@ set listchars=tab:>-
 set noexpandtab
 set backspace=2
 
-nmap <leader>a :Ack! --type=hh --type=cc ""<Left>
-nmap <leader>A :Ack! --type=hh --type=cc <C-r><C-w><CR>
+nmap <leader>a :Ack! ""<Left>
+nmap <leader>A :Ack! <C-r><C-w><CR>
+" Use 'git grep' with ack.vim plugin
+let g:ackprg = 'git grep --column --line-number'
